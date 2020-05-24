@@ -53,9 +53,6 @@ def run(now):
 
 def main():
     while True:
-        if datetime.now().second == 0:
-            break
-    while True:
         now = datetime.now()
         if now.minute % 5 == 0 and now.second == 0:
             run(now)
