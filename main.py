@@ -53,7 +53,7 @@ def run(now):
 
 def main():
     while True:
-        now = datetime.now()
+        now = datetime.now(tz=timezone(timedelta(hours=+9)))
         if now.minute % 5 == 0 and now.second == 0:
             run(now)
             sleep(3*60)
