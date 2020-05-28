@@ -55,7 +55,10 @@ def main():
     while True:
         now = datetime.now(tz=timezone(timedelta(hours=+9)))
         if now.minute % 5 == 0 and now.second == 0:
-            run(now)
+            try:
+                run(now)
+            except Exception as e:
+                print("[Error]", e)
             sleep(3*60)
 
 
