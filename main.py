@@ -54,7 +54,9 @@ def run(now):
 
 
 def main():
+    print("start running")
     run(datetime.now(tz=timezone(timedelta(hours=+9))))
+    print("stop running")
     # while True:
     #     now = datetime.now(tz=timezone(timedelta(hours=+9)))
     #     if now.minute % 5 == 0 and now.second == 0:
