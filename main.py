@@ -44,22 +44,25 @@ def run(now):
         minutes = (start_time - now).total_seconds() / 60
         if minutes >= 8 and minutes < 13:
             notify(start_time, event["summary"], f"あと10分")
-        if minutes >= 58 and minutes < 63:
+        if minutes >= 13 and minutes < 18:
+            notify(start_time, event["summary"], f"あと15分")
+        if minutes >= 58 and minutes < 68:
             notify(start_time, event["summary"], "あと1時間")
-        if minutes >= 1438 and minutes < 1443:
+        if minutes >= 1438 and minutes < 1448:
             notify(start_time, event["summary"], "明日")
     print("finish")
 
 
 def main():
-    while True:
-        now = datetime.now(tz=timezone(timedelta(hours=+9)))
-        if now.minute % 5 == 0 and now.second == 0:
-            try:
-                run(now)
-            except Exception as e:
-                print("[Error]", e)
-            sleep(3*60)
+    run(datetime.now(tz=timezone(timedelta(hours=+9))))
+    # while True:
+    #     now = datetime.now(tz=timezone(timedelta(hours=+9)))
+    #     if now.minute % 5 == 0 and now.second == 0:
+    #         try:
+    #             run(now)
+    #         except Exception as e:
+    #             print("[Error]", e)
+    #         sleep(3*60)
 
 
 if __name__ == "__main__":
