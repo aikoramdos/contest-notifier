@@ -42,13 +42,13 @@ def run(now):
     for event in get_events():
         start_time = iso8601.parse_date(event["start"]["dateTime"])
         minutes = (start_time - now).total_seconds() / 60
-        if minutes >= 8 and minutes < 13:
+        if minutes >= 8 and minutes < 12:
             notify(start_time, event["summary"], f"あと10分")
-        if minutes >= 13 and minutes < 18:
+        if minutes >= 13 and minutes < 17:
             notify(start_time, event["summary"], f"あと15分")
-        if minutes >= 58 and minutes < 68:
+        if minutes >= 58 and minutes < 62:
             notify(start_time, event["summary"], "あと1時間")
-        if minutes >= 1438 and minutes < 1448:
+        if minutes >= 1438 and minutes < 1442:
             notify(start_time, event["summary"], "明日")
     print("finish")
 
