@@ -61,9 +61,9 @@ def main():
                 print("start running")
                 run(datetime.now(tz=timezone(timedelta(hours=+9))))
                 print("stop running")
-                return
             except Exception as e:
                 print("[Error]", e)
+            return
 
 
 if __name__ == "__main__":
